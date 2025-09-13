@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 
-const LoginComponent = () => {
+const LoginComponent = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,11 +19,12 @@ const LoginComponent = () => {
         password,
       });
 
-      // Guardar token en localStorage
-      localStorage.setItem("token", response.data.token);
+      
+      const token = response.data.token;
+      onLogin(token);
 
-      // Redirigir al dashboard
-      navigate("/dashboard");
+     
+      navigate("/");
     } catch (err) {
       console.error(err);
       setError(err.response?.data?.message || "Error al iniciar sesión");
@@ -67,7 +68,6 @@ const LoginComponent = () => {
           </button>
         </form>
 
-        {/* Link al registro */}
         <p className="register-link">
           ¿No tienes cuenta? <Link to="/register">Crea una aquí</Link>
         </p>
