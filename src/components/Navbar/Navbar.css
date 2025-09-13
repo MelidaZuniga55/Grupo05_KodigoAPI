@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #5506b4, #2a0b56);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.logo img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-buttons .btn {
+  margin-left: 15px;
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.login-btn {
+  background-color: #00ffff;
+  color: #000;
+}
+
+.register-btn {
+  background-color: #cc3366;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #cc3366;
+  color: #fff;
+}
+
+.nav-buttons .btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}

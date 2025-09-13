@@ -1,0 +1,48 @@
+/* Reset básico */
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal con gradiente animado */
+.home-container {
+  padding: 40px 20px;
+  min-height: 100vh;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, #3b0084, #2a0b56, #00ffff);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Título principal */
+.title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Mensaje de error */
+.error {
+  color: #cc3366;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor de cards en grid responsive */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
