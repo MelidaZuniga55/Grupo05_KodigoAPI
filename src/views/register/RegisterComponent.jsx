@@ -1,11 +1,10 @@
-// src/views/register/RegisterComponent.jsx
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 import "./register.css";
 
 export default function RegisterComponent() {
-  const [username, setUsername] = useState(""); // 👈 usamos username
+  const [username, setUsername] = useState(""); 
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -18,18 +17,16 @@ export default function RegisterComponent() {
 
     try {
       const res = await axios.post("http://localhost:3000/api/auth/register", {
-        username,  // 👈 aquí mandamos el username
+        username,
         password,
       });
 
       if (res.status === 201) {
         setSuccess("Usuario registrado correctamente ✅");
-        setTimeout(() => navigate("/login"), 2000); // 👈 redirige al login
+        setTimeout(() => navigate("/login"), 2000); // redirige al login
       }
     } catch (err) {
-      setError(
-        err.response?.data?.message || "Error al registrar el usuario ❌"
-      );
+      setError(err.response?.data?.message || "Error al registrar el usuario ❌");
     }
   };
 
@@ -64,6 +61,11 @@ export default function RegisterComponent() {
 
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
+
+        {/* Link al login */}
+        <p className="login-link">
+          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
+        </p>
       </form>
     </div>
   );

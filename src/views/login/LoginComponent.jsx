@@ -1,6 +1,5 @@
-// src/views/login/LoginComponent.jsx
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 
@@ -15,7 +14,6 @@ const LoginComponent = () => {
     setError("");
 
     try {
-      // Consumir API de login
       const response = await axios.post("http://localhost:3000/api/auth/login", {
         username,
         password,
@@ -68,6 +66,11 @@ const LoginComponent = () => {
             Ingresar
           </button>
         </form>
+
+        {/* Link al registro */}
+        <p className="register-link">
+          ¿No tienes cuenta? <Link to="/register">Crea una aquí</Link>
+        </p>
       </div>
     </div>
   );
