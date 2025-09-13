@@ -1,30 +1,30 @@
-/* Reset básico */
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+/* Solo afecta HomePage */
+.home-root {
+  font-family: Arial, sans-serif;
+  display: block;
 }
 
 /* Contenedor principal con gradiente animado */
-.home-container {
+.home-root .home-container {
   padding: 40px 20px;
   min-height: 100vh;
   color: #ffffff;
   text-align: center;
   background: linear-gradient(135deg, #3b0084, #2a0b56, #00ffff);
   background-size: 200% 200%;
-  animation: gradientMove 8s ease infinite;
+  animation: home-gradientMove 8s ease infinite;
+  box-sizing: border-box; 
 }
 
 /* Animación del gradiente */
-@keyframes gradientMove {
+@keyframes home-gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
 /* Título principal */
-.title {
+.home-root .title {
   font-size: 3rem;
   margin-bottom: 30px;
   font-weight: bold;
@@ -33,16 +33,28 @@ html, body {
 }
 
 /* Mensaje de error */
-.error {
-  color: #cc3366;
+.home-root .error {
+  color: #ff3366;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 /* Contenedor de cards en grid responsive */
-.cards-container {
+.home-root .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   padding: 10px;
+}
+
+/* Landing info */
+.home-root .landing-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
+.home-root .cards-container .bootcamp-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }

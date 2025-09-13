@@ -4,10 +4,9 @@ import { BootcampCard } from "./BootCampCard";
 import { Navbar } from "../../components/Navbar/Navbar";
 import "./Style/homePage.css";
 
-export const HomePage = () => {
+export const HomePage = ({ isLoggedIn, onLogout }) => {
   const [bootcamps, setBootcamps] = useState([]);
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
     const fetchBootcamps = async () => {
@@ -29,16 +28,9 @@ export const HomePage = () => {
     fetchBootcamps();
   }, [isLoggedIn]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);
-    setBootcamps([]);
-    setError("");
-  };
-
   return (
-    <>
-      <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+    <div className="home-root">
+      <Navbar isLoggedIn={isLoggedIn} onLogout={onLogout} />
 
       <div className="home-container">
         {!isLoggedIn && (
@@ -64,6 +56,6 @@ export const HomePage = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
