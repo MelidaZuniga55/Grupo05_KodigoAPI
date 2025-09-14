@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 120px;
   background: linear-gradient(135deg, #5506b4, #2a0b56);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .logo img {
-  height: 50px;
+  height: 55px;
   cursor: pointer;
 }
 
