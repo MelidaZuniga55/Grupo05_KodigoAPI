@@ -1,14 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import LoginComponent from "./views/login/LoginComponent";
 import Register from "./views/register/RegisterComponent";
-
-function Dashboard() {
-  return (
-    <div className="container mt-5">
-      <h1 className="text-center">Bienvenido/a</h1>
-    </div>
-  );
-}
+import DashboardComponent from "./views/dashboard/DashboardComponent"; // 👈 luego crearemos esta vista
 
 export default function App() {
   return (
@@ -16,8 +9,14 @@ export default function App() {
       <Routes>
         {/* Página de registro como ruta inicial */}
         <Route path="/" element={<Register />} />
+
+        {/* Página de login */}
         <Route path="/login" element={<LoginComponent />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Dashboard protegido */}
+        <Route path="/dashboard" element={<DashboardComponent />} />
+
+        {/* Cualquier ruta desconocida redirige al registro */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
