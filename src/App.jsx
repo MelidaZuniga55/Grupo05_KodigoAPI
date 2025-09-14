@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
+
 import { HomePage } from "./views/homePage/HomePage";
 import LoginComponent from "./views/login/LoginComponent";
 import Register from "./views/register/RegisterComponent";
-
-import DashboardComponent from "./views/dashboard/DashboardComponent"; // 👈 luego crearemos esta vista
-
+import DashboardComponent from "./views/dashboard/DashboardComponent";
+import Layout from "./components/Layout";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
@@ -23,32 +23,17 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Rutas con Navbar */}
+        <Route element={<Layout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
+          <Route path="/" element={<HomePage isLoggedIn={isLoggedIn} />} />
+          <Route path="/dashboard" element={<DashboardComponent isLoggedIn={isLoggedIn} onLogout={handleLogout} />} />
+        </Route>
 
-        {/* Página de registro como ruta inicial */}
-        <Route path="/" element={<Register />} />
-
-        {/* Página de login */}
-        <Route path="/login" element={<LoginComponent />} />
-
-        {/* Dashboard protegido */}
-        <Route path="/dashboard" element={<DashboardComponent />} />
-
-        {/* Cualquier ruta desconocida redirige al registro */}
-
-        {/* Home con navbar */}
-        <Route
-          path="/"
-          element={<HomePage isLoggedIn={isLoggedIn} onLogout={handleLogout} />}
-        />
-
-        {/* Login y Register */}
-        <Route
-          path="/login"
-          element={<LoginComponent onLogin={handleLogin} />}
-        />
+        {/* Rutas sin Navbar */}
+        <Route path="/login" element={<LoginComponent onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
 
-
+        {/* Redirección por defecto */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

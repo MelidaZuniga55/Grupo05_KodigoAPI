@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BootcampCard } from "./BootCampCard";
-import { Navbar } from "../../components/Navbar/Navbar";
 import "./Style/homePage.css";
 
-export const HomePage = ({ isLoggedIn, onLogout }) => {
+export const HomePage = ({ isLoggedIn }) => {
   const [bootcamps, setBootcamps] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchBootcamps = async () => {
       const token = localStorage.getItem("token");
-      if (!token) return;
+      if (!token || !isLoggedIn) return;
 
       try {
         const res = await axios.get(
@@ -30,20 +29,14 @@ export const HomePage = ({ isLoggedIn, onLogout }) => {
 
   return (
     <div className="home-root">
-      <Navbar isLoggedIn={isLoggedIn} onLogout={onLogout} />
-
       <div className="home-container">
-        {!isLoggedIn && (
+        {!isLoggedIn ? (
           <div className="landing-info">
-            <h1 className="title">Bienvenido a Kodigo Bootcamps</h1>
+            <h1>Bienvenido a Kodigo Bootcamps</h1>
             <p>Descubre los mejores bootcamps de programación, diseño y análisis de datos.</p>
             <p>Para ver todos los bootcamps, inicia sesión o crea tu cuenta.</p>
           </div>
-        )}
-
-        {error && <p className="error">{error}</p>}
-
-        {isLoggedIn && (
+        ) : (
           <div className="cards-container">
             {bootcamps.map((bc) => (
               <BootcampCard
@@ -55,6 +48,7 @@ export const HomePage = ({ isLoggedIn, onLogout }) => {
             ))}
           </div>
         )}
+        {error && <p className="error">{error}</p>}
       </div>
     </div>
   );
