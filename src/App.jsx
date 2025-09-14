@@ -4,6 +4,8 @@ import { HomePage } from "./views/homePage/HomePage";
 import LoginComponent from "./views/login/LoginComponent";
 import Register from "./views/register/RegisterComponent";
 
+import DashboardComponent from "./views/dashboard/DashboardComponent"; // 👈 luego crearemos esta vista
+
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
@@ -21,6 +23,18 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Página de registro como ruta inicial */}
+        <Route path="/" element={<Register />} />
+
+        {/* Página de login */}
+        <Route path="/login" element={<LoginComponent />} />
+
+        {/* Dashboard protegido */}
+        <Route path="/dashboard" element={<DashboardComponent />} />
+
+        {/* Cualquier ruta desconocida redirige al registro */}
+
         {/* Home con navbar */}
         <Route
           path="/"
@@ -33,6 +47,7 @@ export default function App() {
           element={<LoginComponent onLogin={handleLogin} />}
         />
         <Route path="/register" element={<Register />} />
+
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
