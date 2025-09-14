@@ -1,0 +1,60 @@
+/* Solo afecta HomePage */
+.home-root {
+  font-family: Arial, sans-serif;
+  display: block;
+}
+
+/* Contenedor principal con gradiente animado */
+.home-root .home-container {
+  padding: 40px 20px;
+  min-height: 100vh;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, #3b0084, #2a0b56, #00ffff);
+  background-size: 200% 200%;
+  animation: home-gradientMove 8s ease infinite;
+  box-sizing: border-box; 
+}
+
+/* Animación del gradiente */
+@keyframes home-gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Título principal */
+.home-root .title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Mensaje de error */
+.home-root .error {
+  color: #ff3366;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor de cards en grid responsive */
+.home-root .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+/* Landing info */
+.home-root .landing-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
+.home-root .cards-container .bootcamp-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
