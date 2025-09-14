@@ -1,23 +1,31 @@
 .register-container {
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
 .register-form {
-  background: white;
+  width: 500px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2rem;
-  border-radius: 10px;
-  width: 350px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  background: white;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.register-form img {
+  width: 150px;
+  height: 80px;
+  margin-left: 35%;
+  margin-bottom: 20px;
 }
 
 .register-form h2 {
   margin-bottom: 1rem;
   color: #333;
+  font-weight: 600;
 }
 
 .register-form input {
@@ -47,4 +55,18 @@
 .message {
   margin-top: 1rem;
   font-size: 0.9rem;
+}
+
+.login-link {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.register-bg{
+  flex: 1;
+  background: url("/background.png") no-repeat center center;
+  background-size: cover;
 }

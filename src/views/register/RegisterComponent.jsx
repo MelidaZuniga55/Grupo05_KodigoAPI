@@ -33,6 +33,7 @@ export default function RegisterComponent() {
   return (
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
+        <img src="/logoKodigo.jpeg" alt="" />
         <h2>Crear cuenta</h2>
 
         <div className="form-group">
@@ -67,6 +68,7 @@ export default function RegisterComponent() {
           ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
         </p>
       </form>
+      <div className="register-bg"></div>
     </div>
   );
 }

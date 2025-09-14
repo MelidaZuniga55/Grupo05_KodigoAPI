@@ -34,6 +34,7 @@ const LoginComponent = ({ onLogin }) => {
   return (
     <div className="login-container">
       <div className="login-card">
+        <img src="/logoKodigo.jpeg" alt="logo" />
         <h2 className="login-title">Iniciar Sesión</h2>
 
         {error && <div className="login-error">{error}</div>}
@@ -72,6 +73,7 @@ const LoginComponent = ({ onLogin }) => {
           ¿No tienes cuenta? <Link to="/register">Crea una aquí</Link>
         </p>
       </div>
+      <div className="login-bg"></div>
     </div>
   );
 };
