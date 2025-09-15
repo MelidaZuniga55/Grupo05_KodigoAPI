@@ -215,12 +215,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Detalle de línea a la izquierda */
+ 
   border-left: 4px solid #00ffff;
 }
 
 
-/* Animación de entrada elegante */
+
 .carousel-section h2 {
   animation: titleFadeIn 1s ease-out;
 }
