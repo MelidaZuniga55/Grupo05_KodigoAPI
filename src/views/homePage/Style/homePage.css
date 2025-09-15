@@ -1,60 +1,235 @@
-/* Solo afecta HomePage */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Times+New+Roman&display=swap');
+
+/* ----------------- Root ----------------- */
 .home-root {
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat", serif;
   display: block;
+  box-sizing: border-box;
 }
 
-/* Contenedor principal con gradiente animado */
-.home-root .home-container {
-  padding: 40px 20px;
+.home-root h1, 
+.home-root h2,
+.home-root h3 {
+  font-family: "Times New Roman", "Montserrat", serif;
+}
+
+/* ----------------- Contenedor principal con fondo dinámico suave ----------------- */
+.home-container {
+  padding: 50px 60px;
   min-height: 100vh;
   color: #ffffff;
   text-align: center;
-  background: linear-gradient(135deg, #3b0084, #2a0b56, #00ffff);
-  background-size: 200% 200%;
-  animation: home-gradientMove 8s ease infinite;
-  box-sizing: border-box; 
+
+  /* Gradiente elegante y dinámico */
+  background: linear-gradient(45deg, #3b0084, #2a0b56, #452988, #036370);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite alternate;
 }
 
-/* Animación del gradiente */
-@keyframes home-gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Animación de gradiente más fluida y dinámica */
+@keyframes gradientFlow {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-/* Título principal */
-.home-root .title {
-  font-size: 3rem;
-  margin-bottom: 30px;
-  font-weight: bold;
-  color: #00ffff;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-}
 
-/* Mensaje de error */
-.home-root .error {
+
+/* ----------------- Mensaje de error ----------------- */
+.error {
   color: #ff3366;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-/* Contenedor de cards en grid responsive */
-.home-root .cards-container {
+/* ----------------- Landing Section (no logueado) ----------------- */
+.landing-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.landing-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.landing-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+.landing-info p {
+  font-size: 1.2rem;
+  margin: 12px 0;
+}
+
+.landing-images {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 15px;
+}
+
+.landing-images img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.landing-images img:nth-child(1) { animation-delay: 0.8s; }
+.landing-images img:nth-child(2) { animation-delay: 0.7s; }
+.landing-images img:nth-child(3) { animation-delay: 0.6s; }
+.landing-images img:nth-child(4) { animation-delay: 0.8s; }
+
+/* ----------------- Bienvenida logueado ----------------- */
+.welcome-msg {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00ffff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.welcome-sub {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* ----------------- Carrusel de destacados ----------------- */
+.carousel-section {
+  margin-bottom: 50px;
+}
+
+.carousel-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  
+  
+}
+
+
+.carousel {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 40px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 4px;
+}
+
+
+.carousel-item {
+  max-width: 350px;
+   min-height: 230px; 
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item:hover {
+  transform: translateY(-1px) scale(1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 130px;
+   min-height: 200px; 
+  margin-bottom: 10px;
+  background: #3b0084;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* ----------------- Sección más bootcamps ----------------- */
+.more-bootcamps h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.more-bootcamps {
+ 
+  margin-bottom: 70px;
+}
+
+/* Cards de bootcamps */
+.cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   padding: 10px;
 }
 
-/* Landing info */
-.home-root .landing-info p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+/* Hover cards */
+.cards-container .bootcamp-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* ----------------- Animación fadeIn ----------------- */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 
-.home-root .cards-container .bootcamp-card:hover {
-  transform: translateY(-5px);
-  transition: all 0.3s ease;
+.carousel-section h2,
+.more-bootcamps h3 {
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 12px;
+
+ 
+  background: linear-gradient(60deg, #f8f8f8, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Detalle de línea a la izquierda */
+  border-left: 4px solid #00ffff;
+}
+
+
+/* Animación de entrada elegante */
+.carousel-section h2 {
+  animation: titleFadeIn 1s ease-out;
+}
+
+.more-bootcamps h3 {
+  animation: titleFadeIn 1s ease-out;
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
 }

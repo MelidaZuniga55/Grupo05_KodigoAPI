@@ -1,13 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import "../Navbar/navbar.css"; 
 
 export const Navbar = ({ isLoggedIn, onLogout }) => {
+  
+  const handleLogout = () => {
+    Swal.fire({
+      title: "¿Seguro que quieres cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        onLogout();
+        Swal.fire("Sesión cerrada", "Has cerrado sesión correctamente.", "success");
+      }
+    });
+  };
+
   return (
     <nav className="navbar">
       {/* Logo */}
       <div className="logo">
-        <Link to="/"> 
+        <Link to="/">
           <img
             src="/Screenshot_2025-09-13_000547-removebg-preview.png"
             alt="Logo Kodigo"
@@ -19,20 +37,22 @@ export const Navbar = ({ isLoggedIn, onLogout }) => {
       <div className="nav-buttons">
         {!isLoggedIn ? (
           <>
-            {/* Botón que lleva a Login */}
             <Link to="/login" className="btn login-btn">
               Iniciar sesión
             </Link>
-
-            {/* Botón que lleva a Register */}
             <Link to="/register" className="btn register-btn">
               Crear cuenta
             </Link>
           </>
         ) : (
-          <button className="btn logout-btn" onClick={onLogout}>
-            Cerrar sesión
-          </button>
+          <>
+            <Link to="/dashboard" className="btn dashboard-btn">
+              Dashboard
+            </Link>
+            <button className="btn logout-btn" onClick={handleLogout}>
+              Cerrar sesión
+            </button>
+          </>
         )}
       </div>
     </nav>

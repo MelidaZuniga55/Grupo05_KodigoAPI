@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 120px;
   background: linear-gradient(135deg, #5506b4, #2a0b56);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .logo img {
-  height: 50px;
+  height: 55px;
   cursor: pointer;
 }
 
@@ -44,7 +44,7 @@
   background-position: right center;
 }
 
-/* Botón Register → rosa-magenta épico y vivo */
+
 .register-btn {
   background: linear-gradient(135deg, #f15bb5, #ff6f91, #ff1f7b);
   color: #fff;
@@ -74,4 +74,16 @@
   transform: translateY(-3px) scale(1.05);
   opacity: 0.95;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Estilo especial para Dashboard */
+.dashboard-btn {
+  background: linear-gradient(135deg, #06d6a0, #118ab2, #073b4c);
+  color: #fff;
+  background-size: 200% 200%;
+  transition: all 0.4s ease;
+}
+
+.dashboard-btn:hover {
+  background-position: right center;
 }

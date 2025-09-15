@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 
-/* Fuente y color base */
+/* Fuente global */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff; 
+  font-family: "Montserrat", "Times New Roman", serif;
 }
+

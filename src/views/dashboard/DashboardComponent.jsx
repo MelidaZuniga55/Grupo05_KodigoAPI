@@ -97,9 +97,7 @@ export default function DashboardComponent() {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>Dashboard de Bootcamps</h1>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+    
       </div>
 
       {error && <p className="error">{error}</p>}
