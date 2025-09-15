@@ -1,5 +1,6 @@
 /* Card individual */
 .bootcamp-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.9);
   color: #333333;
   border-radius: 16px;
@@ -9,11 +10,63 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1;
 }
+
+/* borde animado */
+.bootcamp-card::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, #ff0066, #3b0084, #00ffff);
+  background-size: 300% 300%;
+  border-radius: 20px;
+  z-index: -1;
+  animation: gradientBorder 3s ease infinite;
+}
+
+.bootcamp-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  border-radius: 16px;
+  z-index: -1;
+}
+
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .bootcamp-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Imagen de la card */
+.bootcamp-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  align-self: center;
 }
 
 /* Título de la card */

@@ -68,7 +68,9 @@ export const HomePage = ({ isLoggedIn }) => {
             <div className="more-bootcamps">
               <h3>Descubre todos nuestros bootcamps y potencia tu carrera</h3>
               <div className="cards-container">
-                {bootcamps.map((bc) => (
+                {bootcamps
+                .filter((bc) => bc.active)
+                .map((bc) => (
                   <BootcampCard
                     key={bc.id}
                     name={bc.name}
