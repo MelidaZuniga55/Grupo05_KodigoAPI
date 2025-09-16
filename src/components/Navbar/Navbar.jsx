@@ -27,7 +27,7 @@ export const Navbar = ({ isLoggedIn, onLogout }) => {
       <div className="logo">
         <Link to="/">
           <img
-            src="/Screenshot_2025-09-13_000547-removebg-preview.png"
+            src="/LogoKodigo.png"
             alt="Logo Kodigo"
           />
         </Link>

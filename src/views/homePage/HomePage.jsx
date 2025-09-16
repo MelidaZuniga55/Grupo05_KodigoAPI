@@ -41,10 +41,10 @@ export const HomePage = ({ isLoggedIn }) => {
             </div>
 
             <div className="landing-images">
-              <img src="src/assets/images/alex-kotliarskyi-ourQHRTE2IM-unsplash.jpg" alt="Programador trabajando" />
-              <img src="src/assets/images/ofspace-llc-MdnVwNz_xdQ-unsplash.jpg" alt="Equipo programando" />
-              <img src="src/assets/images/christina-wocintechchat-com-fch6vkbouCc-unsplash.jpg" alt="Aprendiendo a programar" />
-              <img src="src/assets/images/ben-griffiths-Bj6ENZDMSDY-unsplash.jpg" alt="Estudiantes aprendiendo" />
+              <img src="src/assets/images/img1.jpg" alt="Programador trabajando" />
+              <img src="src/assets/images/img2.jpg" alt="Equipo programando" />
+              <img src="src/assets/images/img3.jpg" alt="Aprendiendo a programar" />
+              <img src="src/assets/images/img4.jpg" alt="Estudiantes aprendiendo" />
             </div>
           </div>
         ) : (
@@ -54,11 +54,11 @@ export const HomePage = ({ isLoggedIn }) => {
   <h2>Lo que dicen nuestros estudiantes</h2>
   <div className="carousel">
     <div className="carousel-item">
-      <img src="src\assets\images\litoon-dev-G1DLcrbdhBk-unsplash.jpg" alt="Juan" className="carousel-img" />
+      <img src="src\assets\images\testi1.jpg" alt="Juan" className="carousel-img" />
       <p>Juan: “Aprendí Java en 3 meses, increíble experiencia!”</p>
     </div>
     <div className="carousel-item">
-      <img src="src\assets\images\ella-don-oZ_vRoBuCxg-unsplash.jpg" alt="Maria" className="carousel-img" />
+      <img src="src\assets\images\testi2.jpg" alt="Maria" className="carousel-img" />
       <p>Maria: “Los instructores son súper claros y atentos.”</p>
     </div>
   </div>
