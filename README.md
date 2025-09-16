@@ -79,5 +79,5 @@ Proyecto desarrollado por el **Grupo 05** como parte del programa de formación 
 
 - **Kenia Lizbeth Martinez Contreras** → Diseño de interfaz, estilos CSS y componentes de la HomePage; integración con la API y validaciones en el layout.  
 - **Kevin Alejandro Granillo Soto** →  Diseño y estilos (CSS) de las vistas de Registro, Login y Dashboard; apoyo en pequeños ajustes del Dashboard. 
-- **Mélida Estefani Zuniga Tepas** → Implementación de la lógica y funcionalidad de Registro, Login y Dashboard, incluyendo consumo de API y validaciones.  
+- **Mélida Estefani Zuniga Tepas** → Implementación de la lógica y funcionalidad de Registro, Login y Dashboard, incluyendo consumo de la API existente y validaciones; mejoras principales en el Dashboard.
 
