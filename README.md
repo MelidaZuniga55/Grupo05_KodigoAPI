@@ -9,9 +9,9 @@ El objetivo principal es **practicar el desarrollo con React y Vite**, además d
 
 ## 📸 Vistas principales
 
-- **Página de inicio** → Presenta la información principal y tarjetas destacadas.  
+- **Página de inicio** → Presenta la información principal y tarjetas destacadas; es la primera vista que ve el usuario después de iniciar sesión.
 - **Login y Registro** → Permite a los usuarios autenticarse y crear cuentas.  
-- **Dashboard** → Vista principal después de iniciar sesión, donde se concentra la información del usuario.  
+- **Dashboard** → Sección dentro de la aplicación que muestra información detallada del usuario y permite acceder a funcionalidades clave. 
 
 ---
 
