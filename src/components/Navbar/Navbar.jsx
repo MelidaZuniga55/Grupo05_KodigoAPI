@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import "../Navbar/navbar.css"; 
+import "./navbar.css"; 
 
 export const Navbar = ({ isLoggedIn, onLogout }) => {
   
